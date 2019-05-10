@@ -8,7 +8,7 @@ public class PlaneTest {
 
     @Before
     public void before() {
-        plane = new Plane(PlaneType.AIRBUSA220, Airline.EASYJET);
+        plane = new Plane(PlaneType.REGULARSIZEDRUDY, Airline.EASYJET);
     }
 
     @Test
@@ -18,6 +18,6 @@ public class PlaneTest {
 
     @Test
     public void planeHasACapacity() {
-        assertEquals(135, plane.getCapacity());
+        assertEquals(10, plane.getCapacity());
     }
 }

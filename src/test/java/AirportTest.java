@@ -10,7 +10,7 @@ public class AirportTest {
     @Before
     public void before() {
         airport = new Airport("EDI");
-        plane = new Plane(PlaneType.AIRBUSA220, Airline.LOGANAIR);
+        plane = new Plane(PlaneType.SMOLPLANE, Airline.LOGANAIR);
         airport.addPlaneToHangar(plane);
         airport.createFlight(850, "Orkney");
     }
@@ -34,6 +34,14 @@ public class AirportTest {
     @Test
     public void canSellTickets() {
         airport.sellTicket(850);
-        assertEquals(1, plane.countPassengers());
+        assertEquals(1, airport.countFlightPassengers(850));
+    }
+
+    @Test
+    public void cantSellTicketIfFlightFull() {
+        airport.sellTicket(850);
+        airport.sellTicket(850);
+        airport.sellTicket(850);
+        assertEquals(2, airport.countFlightPassengers(850));
     }
 }

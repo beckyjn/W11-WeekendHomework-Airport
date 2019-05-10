@@ -37,7 +37,9 @@ public class Airport {
     public void sellTicket(int flightNum) {
         Flight flight = getFlight(flightNum);
         Passenger passenger = new Passenger();
-        flight.addPassenger(passenger);
+        if (flight.isFull() == false) {
+            flight.addPassenger(passenger);
+        }
     }
 
     private Flight getFlight(int flightNum) {
@@ -49,5 +51,12 @@ public class Airport {
         }
         return selectedFlight;
     }
+
+    public int countFlightPassengers(int flightNum) {
+        Flight flight = getFlight(flightNum);
+        return flight.countPassengers();
+    }
+
+
 }
 

@@ -10,17 +10,22 @@ public class FlightTest {
 
     @Before
     public void before() {
-        plane = new Plane(PlaneType.AIRBUSA330, Airline.KLM);
+        plane = new Plane(PlaneType.SMOLPLANE, Airline.KLM);
         flight = new Flight(plane, 754, "Barcelona");
     }
 
     @Test
     public void flightHasCapacity() {
-        assertEquals(406, flight.getCapacity());
+        assertEquals(2, flight.getCapacity());
     }
 
     @Test
     public void flightStartsWithNoPassengers() {
         assertEquals(0, flight.countPassengers());
+    }
+
+    @Test
+    public void canSeeIfFlightIsFull() {
+        assertEquals(false, flight.isFull());
     }
 }

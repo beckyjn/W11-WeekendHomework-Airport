@@ -24,4 +24,14 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         plane.addPassenger(passenger);
     }
+
+    public boolean isFull() {
+        int passengers = countPassengers();
+        int capacity = getCapacity();
+        if (passengers < capacity){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
