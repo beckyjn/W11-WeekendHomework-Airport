@@ -15,4 +15,9 @@ public class PlaneTest {
     public void planeStartsWithNoPassengers() {
         assertEquals(0, plane.countPassengers());
     }
+
+    @Test
+    public void planeHasACapacity() {
+        assertEquals(135, plane.checkCapacity());
+    }
 }
