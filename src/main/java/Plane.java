@@ -15,7 +15,7 @@ public class Plane {
         return passengers.size();
     }
 
-    public int checkCapacity() {
+    public int getCapacity() {
         return planeType.getCapacity();
     }
 }
