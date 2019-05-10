@@ -11,25 +11,29 @@ public class AirportTest {
     public void before() {
         airport = new Airport("EDI");
         plane = new Plane(PlaneType.AIRBUSA220, Airline.LOGANAIR);
-    }
-
-    @Test
-    public void airportStartsWithEmptyHangar() {
-        assertEquals(0, airport.countPlanesInHangar());
-    }
-
-    @Test
-    public void canAddPlaneToHangar() {
         airport.addPlaneToHangar(plane);
-        assertEquals(1, airport.countPlanesInHangar());
+        airport.createFlight(850, "Orkney");
     }
+
+//    @Test
+//    public void airportStartsWithEmptyHangar() {
+//        assertEquals(0, airport.countPlanesInHangar());
+//    }
+
+//    @Test
+//    public void canAddPlaneToHangar() {
+//        assertEquals(1, airport.countPlanesInHangar());
+//    }
 
     @Test
     public void canCreateFlights() {
-        airport.addPlaneToHangar(plane);
-        airport.createFlight(850, "Rhodes");
         assertEquals(0, airport.countPlanesInHangar());
         assertEquals(1, airport.countScheduledFlights());
     }
-    
+
+    @Test
+    public void canSellTickets() {
+        airport.sellTicket(850);
+        assertEquals(1, plane.countPassengers());
+    }
 }
