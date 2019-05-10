@@ -22,6 +22,14 @@ public class AirportTest {
     public void canAddPlaneToHangar() {
         airport.addPlaneToHangar(plane);
         assertEquals(1, airport.countPlanesInHangar());
-
     }
+
+    @Test
+    public void canCreateFlights() {
+        airport.addPlaneToHangar(plane);
+        airport.createFlight(850, "Rhodes");
+        assertEquals(0, airport.countPlanesInHangar());
+        assertEquals(1, airport.countScheduledFlights());
+    }
+    
 }
