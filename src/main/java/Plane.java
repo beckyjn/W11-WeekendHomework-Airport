@@ -18,4 +18,8 @@ public class Plane {
     public int getCapacity() {
         return planeType.getCapacity();
     }
+
+    public void addPassenger(Passenger passenger){
+        passengers.add(passenger);
+    }
 }

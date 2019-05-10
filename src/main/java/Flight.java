@@ -17,4 +17,11 @@ public class Flight {
         return plane.countPassengers();
     }
 
+    public int getFlightNumber() {
+        return this.flightNum;
+    }
+
+    public void addPassenger(Passenger passenger) {
+        plane.addPassenger(passenger);
+    }
 }
